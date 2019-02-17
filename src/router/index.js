@@ -3,6 +3,7 @@ import Abstract from '../views/layout/abstract.vue'
 import Home from '../views/home/home.vue'
 import Login from '../views/login.vue'
 import Table from '../views/table/table.vue'
+import Matching from '../views/table/matching.vue'
 
 export const loginRouter = {
   path: '/login',
@@ -67,12 +68,19 @@ export const appRouter = [
         component: Login
       },
       {
-        title: '活跃用户',
+        title: '用户列表',
         name: 'usr_activated',
         path: 'activated',
         icon: 'fa fa-home fa-lg',
         component: Table
-      }
+      },
+			{
+			  title: 'AI匹配',
+			  name: 'usr_match',
+			  path: 'matching',
+			  icon: 'fa fa-home fa-lg',
+			  component: Matching
+			}
     ]
   },
   {

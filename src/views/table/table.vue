@@ -1,102 +1,107 @@
 <template>
-  <el-table
-    :data="tableData5"
-    style="width: 100%">
-    <el-table-column type="expand">
-      <template slot-scope="props">
-        <el-form label-position="left" inline class="demo-table-expand">
-          <el-form-item label="商品名称">
-            <span>{{ props.row.name }}</span>
-          </el-form-item>
-          <el-form-item label="所属店铺">
-            <span>{{ props.row.shop }}</span>
-          </el-form-item>
-          <el-form-item label="商品 ID">
-            <span>{{ props.row.id }}</span>
-          </el-form-item>
-          <el-form-item label="店铺 ID">
-            <span>{{ props.row.shopId }}</span>
-          </el-form-item>
-          <el-form-item label="商品分类">
-            <span>{{ props.row.category }}</span>
-          </el-form-item>
-          <el-form-item label="店铺地址">
-            <span>{{ props.row.address }}</span>
-          </el-form-item>
-          <el-form-item label="商品描述">
-            <span>{{ props.row.desc }}</span>
-          </el-form-item>
-        </el-form>
-      </template>
-    </el-table-column>
-    <el-table-column
-      label="商品 ID"
-      prop="id">
-    </el-table-column>
-    <el-table-column
-      label="商品名称"
-      prop="name">
-    </el-table-column>
-    <el-table-column
-      label="描述"
-      prop="desc">
-    </el-table-column>
-  </el-table>
+	<el-table :data="userInfo" style="width: 100%">
+		<el-table-column type="expand">
+			<template slot-scope="props">
+				<el-form label-position="left" inline class="demo-table-expand">
+					<el-form-item label="姓名">
+						<span>{{ props.row.username }}</span>
+					</el-form-item>
+					<el-form-item label="性别">
+						<span>{{ props.row.usersex }}</span>
+					</el-form-item>
+					<el-form-item label="出生日期">
+						<span>{{ props.row.birthday }}</span>
+					</el-form-item>
+					<el-form-item label="出生地">
+						<span>{{ props.row.birthlocation }}</span>
+					</el-form-item>
+					<el-form-item label="工作地点">
+						<span>{{ props.row.worklocation }}</span>
+					</el-form-item>
+					<el-form-item label="职位">
+						<span>{{ props.row.jobtitle }}</span>
+					</el-form-item>
+					<el-form-item label="年薪">
+						<span>{{ props.row.salary }}</span>
+					</el-form-item>
+					<el-form-item label="房产数量">
+						<span>{{ props.row.housenumber }}</span>
+					</el-form-item>
+					<el-form-item label="个人爱好">
+						<span>{{ props.row.hobby }}</span>
+					</el-form-item>
+					<el-form-item>
+						<el-button size='small' type="success" @click="onSearch">进行AI匹配</el-button>
+						<el-button size='small' type="warning">停止AI匹配</el-button>
+					</el-form-item>
+				</el-form>
+			</template>
+		</el-table-column>
+		<el-table-column label="姓名" prop="username">
+		</el-table-column>
+		<el-table-column label="性别" prop="usersex">
+		</el-table-column>
+		<el-table-column label="职位" prop="jobtitle">
+		</el-table-column>
+	</el-table>
 </template>
 
 <style>
-  .demo-table-expand {
-    font-size: 0;
-  }
-  .demo-table-expand label {
-    width: 90px;
-    color: #99a9bf;
-  }
-  .demo-table-expand .el-form-item {
-    margin-right: 0;
-    margin-bottom: 0;
-    width: 50%;
-  }
+	.demo-table-expand {
+		font-size: 0;
+	}
+
+	.demo-table-expand label {
+		width: 90px;
+		color: #99a9bf;
+	}
+
+	.demo-table-expand .el-form-item {
+		margin-right: 0;
+		margin-bottom: 0;
+		width: 50%;
+	}
 </style>
 
 <script>
-  export default {
-    data() {
-      return {
-        tableData5: [{
-          id: '12987122',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987123',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987125',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }, {
-          id: '12987126',
-          name: '好滋好味鸡蛋仔',
-          category: '江浙小吃、小吃零食',
-          desc: '荷兰优质淡奶，奶香浓而不腻',
-          address: '上海市普陀区真北路',
-          shop: '王小虎夫妻店',
-          shopId: '10333'
-        }]
-      }
-    }
-  }
+	export default {
+		data() {
+			return {
+				userInfo: [{
+					username: '张三',
+					usersex: '男',
+					birthday: '2001-01-01',
+					birthlocation: '荷兰',
+					worklocation: '上海',
+					jobtitle: 'CEO',
+					company: '沃尔玛',
+					salary: '100k',
+					housenumber: '2',
+					hobby: '乒乓球'
+				}, {
+					username: '李四',
+					usersex: '男',
+					birthday: '1961-01-01',
+					birthlocation: '扬州',
+					worklocation: '上海',
+					jobtitle: '工人',
+					company: '建筑公司',
+					salary: '10k',
+					housenumber: '1',
+					hobby: '射击'
+				}, {
+					username: '王五',
+					usersex: '男',
+					birthday: '1922-01-01',
+					birthlocation: '美国',
+					worklocation: '上海',
+					jobtitle: '程序员',
+					company: '腾讯',
+					salary: '20k',
+					housenumber: '2',
+					hobby: '羽毛球'
+				}]
+			}
+		}
+	}
 </script>

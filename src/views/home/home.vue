@@ -6,28 +6,28 @@
         iconType="android-person-add"
         color="#2d8cf0"
         count="13425"
-        message="Total Users"></info-card>
+        message="匹配总人数"></info-card>
       </el-col>
       <el-col :span="6" style="padding-right: 5px">
       <info-card
         iconType="android-person-add"
         color="#64d572"
         count="765"
-        message="Total Members"></info-card>
+        message="可进行匹配总人数"></info-card>
       </el-col>
       <el-col :span="6" style="padding-right: 5px">
       <info-card
         iconType="android-person-add"
         color="#ffd572"
         count="235"
-        message="New Users"></info-card>
+        message="男性人数"></info-card>
       </el-col>
       <el-col :span="6" >
       <info-card
         iconType="android-person-add"
         color="#f25e43"
         count="76"
-        message="New Member"></info-card>
+        message="女性人数"></info-card>
       </el-col>
 
     </el-row>
